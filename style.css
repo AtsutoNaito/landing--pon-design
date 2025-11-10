@@ -1,0 +1,677 @@
+body{
+    font-family: "Montserrat", Arial, "Hiragino Kaku Gothic ProN", 
+    "Hiragino Sans", Meiryo, sans-serif;
+}
+
+
+
+/* ヘッダー */
+.header{
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 99;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    transition: background-color .5s;
+    box-sizing: border-box;
+    max-width: 100vw;
+}
+
+.header.transform{
+    background-color: #391e88;
+}
+
+.header h1{
+    margin: 20px;
+    font-size: 27px;
+}
+
+.nav-pc{
+    margin: 0 15px;
+    font-size: 15px;
+}
+
+.nav-pc a{
+    margin-right: 15px;
+    position: relative;
+}
+
+.nav-pc a::after{
+    position: absolute;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background: white;
+    bottom: -3px;
+    transform: scale(0,1);
+    transform-origin: left top;
+    transition: transform 0.3s;
+}
+
+.nav-pc a:hover::after{
+    transform: scale(1,1);
+}
+
+.nav-sp{
+    display: none;
+}
+
+/* メインビジュアル */
+.mainvisual-inner{
+    height: 100vh;
+    width: 100%;
+    background-image:url(image/hero.jpg) ;
+    background-size: cover;
+    background-position: center center;
+    color: white;
+    position: relative;
+}
+.mainvisual-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    width: 100%;
+}
+.mainvisual-content h1{
+    font-size: 75px;
+    font-weight: bold;
+    width: 100%;
+}
+.mainvisual-content p{
+    font-size: 28px;
+    margin: 22px 0;
+}
+.mainvisual-content a{
+    font-weight: bold;
+    margin-top: 15px;
+    display: inline-block;
+    width: 200px;
+    height: 55px;
+    text-align:center;
+    line-height: 50px;
+    border-radius: 35px;
+    border: solid 1px white;
+    position: relative;
+    transition: ease .2s;
+}
+
+.mainvisual-content a:hover{
+    opacity: 0.5;
+}
+
+.mainvisual-content a::after{
+    position: absolute;
+    width: 0;
+    height: 0;
+    content: "";
+    border: 5px solid transparent;
+    border-left: 5px solid white;
+    top: 20px;
+    right: 30px;
+    transition: all .3s;
+}
+
+.mainvisual-content a:hover::after{
+    right: 11px;
+}
+
+.scrolldown{
+    position: absolute;
+    right: 50px;
+    bottom: 30px;
+    height: 50px;
+    width: 1rem;
+}
+
+.scrolldown span{
+    position: absolute;
+    left: -15px;
+    top: -15px;
+    color: white;
+    font-size: 0.7rem;
+    letter-spacing: 0,05rem;
+    display: block;
+    transform: rotate(90deg);
+}
+
+.scrolldown::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 1px;
+    height: 50px;
+    background: white;
+    animation: pathmove 1.7s ease-in-out infinite;
+    opacity: 0;
+}
+
+@keyframes pathmove{
+    0%{
+        height: 0;
+        top: 0;
+        opacity: 0;
+    }
+    30%{
+        height: 50px;
+        opacity: 1;
+    }
+    100%{
+        height: 0;
+        top: 80px;
+        opacity: 0;
+    }
+}
+
+/* ニュース */
+.news-innner{
+    display: flex;
+    width: 100%;
+    margin: 50px auto;
+    justify-content: space-around;
+    max-width: 950px;
+}
+
+.section-title{
+    color: #391e88;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-title h2{
+    font-size: 2.25rem;
+    font-weight: bold;
+}
+
+.section-title p{
+    font-size: 14px;
+}
+
+.news-list li{
+    display: flex;
+    margin: 0 0 25px 40px;
+
+    color: #333;
+    font-size: 0.9rem;
+    height: 1.1rem;
+}
+
+.list-body{
+    display: flex;
+}
+
+.icon{
+    background-color: #e8e8e8;
+    border-radius: 20px;
+    margin: 0 25px;
+    width: 4.5rem;
+    text-align: center;
+}
+
+.detail{
+    margin-left: 2rem;
+}
+
+.detail{
+    text-decoration: none;
+}
+
+.detail:hover{
+    text-decoration: underline;
+}
+
+/* サービス */
+.service-inner{
+    max-width: 1200px;
+    text-align: center;
+    margin: 40px auto;
+}
+
+.service-content{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 25px;
+    color: #333;
+}
+
+.service-content-item{
+    width: 30%;
+}
+
+.content-img{
+    max-width: 100%;
+}
+
+.service-content-item h3{
+    font-weight: bold;
+    font-size: 20px;
+    margin: 15px 0;
+}
+
+.service-content-item p{
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.more{
+    text-align: center;
+}
+
+.more a{
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+    width: 200px;
+    height: 55px;
+    text-align:center;
+    line-height: 50px;
+    border-radius: 35px;
+    position: relative;
+    background-image: linear-gradient(to right, #7633a4 0%, #250d65 51%, #7633a4 100%);
+    background-size: 200% auto;
+    color: white;
+    letter-spacing: 0.1rem;
+    transition: ease .2s;
+}
+
+.more a:hover{
+    background-position: 99% 50% ;
+}
+
+.more a::after{
+    position: absolute;
+    width: 0;
+    height: 0;
+    content: "";
+    border: 5px solid transparent;
+    border-left: 5px solid white;
+    top: 20px;
+    right: 30px;
+    transition: all .3s;
+}
+
+.more a:hover::after{
+    right: 8px;
+}
+
+/* ワークス */
+
+.works{
+    margin: 50px 0;
+}
+
+.works-innner{
+    display: flex;
+    max-width: 100vw;
+    justify-content: space-between;
+    width: 100%;
+    padding: 40px 0 40px 0;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.carousel{
+    width: 60%;
+}
+
+.carousel-img{
+    max-width: 100%;
+    margin-right: 20px;
+}
+
+.slick-dots{
+    max-width: 100px;
+    right: 20px;
+}
+
+.works-content{
+    text-align: center;
+    align-self: center;
+    letter-spacing: 0.1rem;
+    padding-right: 50px;
+    position: relative;
+}
+
+.works-message{
+     font-size: 0.9rem;
+     margin: 20px 0;
+     line-height: 1.1rem;
+}
+
+.works-content::after{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    z-index: -1;
+    display: block;
+    width: 200%;
+    height: 85vh;
+    content: "";
+    -webkit-transform: translateY(-60%);
+    transform: translateY(-60%);
+    background-color: #f0f0f0;
+}
+
+/* カンパニー */
+.company-inner{
+    text-align: center;
+    max-width: 1200px;
+    padding-bottom: 50px;
+    background-image:url(image/bg-face.png) ;
+    background-repeat: no-repeat;
+    background-size: contain;
+    overflow: hidden;
+    margin: 50px auto;
+}
+
+.company-message{
+    text-align: center;
+}
+
+.company-message h1{
+    display: inline-block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 20px 0;
+}
+.company-message h1 span{
+    background:linear-gradient(transparent 70%, #f5f534 30%);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.company-message p{
+    line-height: 1.5rem;
+    letter-spacing: 0.1rem;
+    margin-bottom: 25px;
+}
+
+/* リクルート */
+.recruit-inner{
+    width: 100%;
+    padding-bottom: 50px;
+    max-width: 1200px;
+    margin: 60px 0;
+}
+
+.recruit-content{
+    display: flex;
+    justify-content: center;
+}
+
+.recruit-left{
+    width: 35%;
+    text-align: center;
+    padding: 30px 30px;
+    background-color: #f0f0f0;
+}
+
+.recruit-message{
+    margin: 30px 0;
+}
+
+.recruit-content img{
+    width: 55%;
+}
+
+/* コンタクト */
+.contact-inner{
+    text-align: center;
+    background-color: #e8e8e8;
+    max-width: 100vw;
+    margin-top: 50px;
+    padding: 40px 0;
+}
+
+.contact-message{
+    padding: 30px 0;
+}
+
+/* フッター */
+footer{
+    color: white;
+    background-color: #120e19;
+    text-align: center;
+    padding: 30px 0;
+}
+
+.footer-nav{
+    padding: 40px 0;
+}
+
+.footer-nav a{
+    padding: 0 10px;
+}
+
+.footer-nav a:hover{
+    opacity: 0.5;
+}
+
+small{
+    color: #a798b7;
+    padding: 20px 0;
+}
+
+/* TOPに戻るボタン */
+
+.top{
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+}
+.top a {
+    background-color: #fff;
+    color: #391e88;
+    text-align: center;
+    text-decoration: none;
+    padding: 15px 20px;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 768px){
+
+
+    /* スマホ用ヘッダー */
+    .header h1{
+        font-size: 18px;
+    }
+
+    .nav-pc{
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:100vh;
+        margin:0;
+        background-image: linear-gradient(135deg, #7633a4, #250d65);
+        transform:translate(100%, 0);
+        transition:all 0.3s ease;
+    }
+    .nav-pc.is-open{
+        transform:translate(0, 0);
+        
+    }
+    .nav-pc a{
+        display:block;
+        color:white;
+        padding:20px;
+    }
+    .nav-sp{
+        display: block;
+        width:50px;
+        height:50px;
+        position:fixed;
+        top:20px;
+        right:20px;
+    }
+
+    .nav-sp span{
+    display: inline-block;
+    transition: all .4s;
+    position: absolute;
+    left: 14px;
+    height: 3px;
+    border-radius: 2px;
+	background: #fff;
+  	width: 45%;
+    }
+
+    .nav-sp span:nth-of-type(1){
+        top: 15px;
+    }
+
+    .nav-sp span:nth-of-type(2){
+        top: 23px;
+    }
+
+    .nav-sp span:nth-of-type(3){
+        top: 31px;
+    }
+
+
+    .nav-sp.is-open span:nth-of-type(1){
+        top: 18px;
+        left: 18px;
+        transform: translateY(6px)rotate(-45deg);
+        width: 30%;
+    }
+
+    .nav-sp.is-open span:nth-of-type(2){
+        opacity: 0;
+    }
+
+    .nav-sp.is-open span:nth-of-type(3){
+        top: 30px;
+        left: 18px;
+        transform: translateY(-6px)rotate(45deg);
+        width: 30%;
+    }
+
+
+    body.is-open{
+        overflow-y:hidden;
+    }
+
+    /* スマホ用メインビジュアル */
+
+
+    .mainvisual-content{
+        max-width: 300px;
+        text-align: left;
+    }
+
+    .mainvisual-content h1{
+        font-size: 33px;
+    }
+
+    .mainvisual-content p{
+        font-size: 12px;
+    }
+
+    .scrolldown{
+        right: 20px;
+    }
+
+    /* スマホ用ニュース */
+
+    .news-innner{
+        display: block;
+    }
+
+    .list-body{
+        display: flex;
+        width: 100%;
+    }    
+
+    .news-list li{
+        flex-wrap: wrap;
+        text-align: left;
+        margin: 45px 20px;
+    }
+
+    .news-list a{
+        margin: 10px 0;
+    }
+
+    /* スマホ用サービス */
+    .service-content{
+        display: block;
+        max-width: 750px;
+        margin: 0 auto;
+        padding: 0 10px;
+    }
+
+    .service-content-item{
+        width: 100%;
+    }
+
+    .service-content-item h3{
+        text-align: center;
+    }
+
+    /* スマホ用ワークス */
+
+    .works-innner{
+        display: block;
+        align-items: center;
+    }
+
+    .carousel{
+        width: 100%;
+    }
+
+    .works-content{
+        padding: 0;
+    }
+
+    /* スマホ用カンパニー */
+    .company-inner{
+        background-image: none;
+    }
+
+    .company-message{
+        line-height: 1.5;
+    }
+
+    /* スマホ用リクルート */
+    .recruit{
+        margin: 0 20px;
+    }
+
+    .recruit-content{
+        flex-direction: column-reverse;
+    }
+
+    .recruit-left{
+        width: 100%;
+        padding: 60px 0;
+    }
+
+    .recruit-content img{
+        width: 100%;
+    }
+
+    /* スマホ用フッター */
+    .footer-nav{
+        width: 70%;
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .footer-nav a{
+        margin-left: 20px;
+        margin-bottom: 15px;
+    }
+}
+
